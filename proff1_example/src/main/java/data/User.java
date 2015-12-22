@@ -100,6 +100,23 @@ public class User {
 	 * */
 	//private Employee employee=null;
 	
+	public Long getEmployee_id() {
+		return employee_id;
+	}
+
+	public void setEmployee_id(Long employee_id) {
+		this.employee_id = employee_id;
+	}
+
+	public Employee getEmployee() {
+		return employee;
+	}
+
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
+	}
+
+
 	@OneToMany(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
 	@JoinTable(name="roles_users",
 			joinColumns = @JoinColumn(name = "user_id"),
@@ -171,7 +188,7 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", login=" + login + ", pass=" + pass 
-				 +", roles="+roles+ " employee="+employee + "]";
+				 +", roles="+roles+ " employee_id="+employee_id+ " employee="+employee + "]";
 	}
 
 }
